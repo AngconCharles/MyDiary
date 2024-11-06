@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body">
+    <header>
+        <h1 class="logo">My Diary</h1>
+        <nav>
+            <ul>
+                <li><a href="#College Day">CollegeDay</a></li>
+                <li><a href="vid.html">Video</a></li>
+                <li><a href="aboutme.html">Information</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h2 class="Title">My Diary</h2>
+    <main>
+        <section id="CollegeDay">  
+            <article>
+                <h3>Morning Mass</h3>
+                <p>Date: 2024-09-19 <br><br> This is a Bless Moring for all Asian College of technology!</p>
+
+                <img src="image/morning mass.jpg" class="FPic">
+            </article>
+            <article>
+                <h3>Faculty and Admin Dance</h3>
+                <p>Date: 2024-10-11 <br><br> So exciting and so adorable to all Faculty staff, they all dancing</p>
+                <img src="image/Faculty and admin.jpg" class="FPic">
+            </article>
+            <article>
+                <h3>Custome making for laparoza</h3>
+                <p>Date: 2024-10-11 <br><br> We help to those participance in laparoza to make the props</p>
+                <img src="image/Custome Making.jpeg" class="FPic">
+            </article>
+            <article>
+                <h3><b>BEFORRE WE PERFORM</b></h3>
+                <h3>Laparoza Dancers and Propsmen</h3>
+                <p>Date: 2024-10-12 <br><br>This is the exciting and nervous part of our life before we perform the laparoza<br> </p>
+                <img src="image/La paroza Cast.jpeg" class="FPic">
+            </article>
+            <article>
+                <h3><b>AFRER WE PERFORM</b></h3>
+                <h3>Laparoza Dancers and Propsmen</h3>
+                <p>Date: 2024-10-12 <br><br> We done of our dance and we all happy what we did and we proud of our self</p>
+                <img src="image/Done perform.jpeg" class="FPic">
+            </article>
+            <article>
+                <h3><b>CCS Dance</b></h3>
+                <h3>CCS Faculty</h3>
+                <p>Date: 2024-10-11 <br><br> its so fan to watch and so Nice performance</p>
+                <img src="image/F2.jpg" class="FPic">
+            </article>
+        </section>
+
+        <section id="CollegeDay"> 
+
+        <img src="image/F1.jpg" class="FPic">
+        <img src="image/F3.jpg" class="FPic">
+
+        </section>
+
+        <!-- Modal -->
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="" alt="Image description">
+                <p></p>
+            </div>
+        </div>
+
+
+    </main>
+    <footer>
+        <p>&copy; 2024 My Diary. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articles = document.querySelectorAll('#entries article');
+            const modal = document.querySelector('.modal');
+            const modalContent = document.querySelector('.modal-content');
+            const modalImage = modalContent.querySelector('img');
+            const modalDescription = modalContent.querySelector('p');
+            const closeBtn = document.querySelector('.close');
+    
+            // Add click event to each article
+            articles.forEach(article => {
+                article.addEventListener('click', () => {
+                    const title = article.querySelector('h3').textContent;
+                    const imgSrc = article.querySelector('img').src;
+                    const description = article.querySelector('p').textContent;
+    
+                    // Set the modal image and description
+                    modalImage.src = imgSrc;
+                    modalDescription.textContent = description;
+                    // Show the modal
+                    modal.style.display = 'flex';
+                });
+            });
+    
+            // Close the modal when the close button is clicked
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+    
+            // Close the modal when clicking outside the content
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

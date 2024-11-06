@@ -1,0 +1,75 @@
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+header {
+    background: #0c7ad4;
+    display: flex;
+    color: #fff;
+    padding: 10px;
+    justify-content: space-between;
+    position: sticky; /* or use 'fixed' if you want it to stay at the top */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+nav ul {
+    display: flex;
+    padding-right: 30px;
+    list-style-type: none;
+    padding: 10;
+    
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    position: relative;
+}
+nav ul li:hover a {
+    color: rgb(3, 179, 94); /* Change text color on hover */
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+nav ul li::after {
+    content: "";
+    display: block;
+    height: 2px; /* Height of the underline */
+    background: #fff; /* Color of the underline */
+    width: 0; /* Initial width of the underline */
+    transition: width 0.3s; /* Smooth width transition */
+    position: absolute;
+    left: 50%; /* Center the underline */
+    bottom: -5px; /* Position it below the text */
+    transform: translateX(-50%); /* Center it correctly */
+}
+nav ul li:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+.Video{
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr 1fr));
+    gap: 10rem;
+    margin: 10rem;
+    text-emphasis-color:red;
+}
+.Video video{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    position: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 25px red;
+    transition: 0.3s ease;
+    margin-top: 5rem;
+    margin-left: 5rem;
+}
+
